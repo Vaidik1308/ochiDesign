@@ -1,0 +1,47 @@
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+
+type Props = {}
+
+const Eyes = (props: Props) => {
+    const [rotate,setRotate] = useState(0)
+    useEffect(() => {
+        window.addEventListener("mousemove",(e) => {
+            // console.log(e.clientX,e.clientY);
+            let mouseX = e.clientX
+            let mouseY =e.clientY
+            
+            let deltaX = mouseX - window.innerWidth/2;
+            let deltaY = mouseY - window.innerHeight/2;
+
+            let angle = Math.atan2(deltaY,deltaX) * (180/Math.PI);
+
+            setRotate(angle-180)
+        })
+    },[])
+  return (
+    <div className='w-full h-screen  overflow-hidden'>
+        <div className="relative w-full h-full bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg')] bg-cover bg-center">
+            <div className='flex gap-10 items-center absolute  top-1/2 left-1/2  -translate-x-[50%] -translate-y-[50%] '>
+                
+                <div className='flex items-center justify-center w-[15vw] h-[15vw] rounded-full bg-zinc-100'>
+                    <div className='w-2/3 h-2/3 bg-black rounded-full flex items-center justify-center '>
+                        <div style={{transform:`rotate(${rotate}deg)`}} className='line w-full h-10 '>
+                            <div className='w-10 h-10 rounded-full bg-zinc-100'></div>
+                        </div>
+                    </div>
+                </div>
+                <div className='flex items-center justify-center w-[15vw] h-[15vw] rounded-full bg-zinc-100'>
+                    <div className='w-2/3 h-2/3 bg-black rounded-full flex items-center justify-center '>
+                        <div style={{transform:` rotate(${rotate}deg)`}} className='line w-full h-10 '>
+                            <div className='w-10 h-10 rounded-full bg-zinc-100'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Eyes
