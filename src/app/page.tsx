@@ -1,8 +1,9 @@
+import Carousel from "@/components/Carousel/Carousel";
 import About from "@/components/about/About";
 import Eyes from "@/components/eyes/Eyes";
+import Featured from "@/components/featturedProject/Featured";
 import Landing from "@/components/landing/Landing";
 import Marquee from "@/components/marquee/Marquee";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <Marquee/>
       <About/>
       <Eyes/>
+      <Featured/>
+      <Carousel/>
     </main>
   );
 }

@@ -1,0 +1,19 @@
+.bg_animation{
+    transition: ease 0.3s all;
+}
+
+
+
+.clipPath-circle{
+    transition:clip-path 2s linear;
+    clip-path: circle(20.5% at 100% 1%);
+
+}
+.sec{
+    transition-delay: 0.2s;
+    transition: 0.5s ;
+}
+
+.active{
+    clip-path: circle(150.7% at 100% 1%);
+}

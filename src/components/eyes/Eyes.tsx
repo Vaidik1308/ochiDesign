@@ -7,7 +7,6 @@ const Eyes = (props: Props) => {
     const [rotate,setRotate] = useState(0)
     useEffect(() => {
         window.addEventListener("mousemove",(e) => {
-            // console.log(e.clientX,e.clientY);
             let mouseX = e.clientX
             let mouseY =e.clientY
             
