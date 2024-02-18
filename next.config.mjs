@@ -5,7 +5,5 @@ const nextConfig = {
     }
 
 };
-const withTM = require('next-transpile-modules')(['gsap']);
-module.exports = withTM();
 
 export default nextConfig;
